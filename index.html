@@ -1,1 +1,111 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h2>Tubes To Be Eaten</h2>
+
+<p>Edible Tubes:</p>
+<button class="collapsible">Meat Tubes</button>
+<div class="content">
+  <a href="_assets/food/meat/3brats.jpg">
+	<img alt="Three different types of bratwurst" src="_assets/food/meat/3brats.jpg">
+  </a><br>
+  <a href="_assets/food/meat/bratwurst.jpg">
+	<img alt="Several bratwurst" src="_assets/food/meat/bratwurst.jpg">
+  </a><br>
+  <a href="_assets/food/meat/italian-sausage.jpg">
+	<img alt="raw italian sausage" src="_assets/food/meat/italian-sausage.jpg">
+  </a><br>
+  <a href="_assets/food/meat/kielbasa.jpg">
+	<img alt="kielbasa of many colors" src="_assets/food/meat/kielbasa.jpg">
+  </a><br>
+
+
+</div>
+
+<button class="collapsible">Vegetable Tubes</button>
+<div class="content">
+  <a href="_assets/food/vegetable/asparagus.jpg">
+	<img alt="asparagus" src="_assets/food/vegetable/asparagus.jpg">
+  </a><br>
+  <a href="_assets/food/vegetable/zucchini.jpg">
+	<img alt="zucchini" src="_assets/food/vegetable/zucchini.jpg">
+  </a><br>
+
+  <a href="_assets/food/vegetable/carrot.jpg">
+	<img alt="carrot" src="_assets/food/vegetable/carrot.jpg">
+  </a><br>
+  <a href="_assets/food/vegetable/eggplants.jpg">
+	<img alt="eggplants" src="_assets/food/vegetable/eggplants.jpg">
+  </a><br>
+
+
+</div>
+
+<button class="collapsible">Miscellaneous Tubes</button>
+<div>
+
+</div>
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>
+
+
